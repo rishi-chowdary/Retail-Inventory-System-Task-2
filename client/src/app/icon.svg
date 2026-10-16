@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4338CA"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Base -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#bgGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="none" stroke="#FFFFFF" stroke-opacity="0.25" stroke-width="1.5"/>
+
+  <!-- Modern RP Monogram -->
+  <!-- Letter R -->
+  <path d="M14 44 V20 H25 C29.5 20 32.5 23 32.5 27 C32.5 30.5 30 33 26 33.5 L33 44 H27.5 L21.5 34.5 H19 V44 H14 Z M19 29.5 H24.5 C26.8 29.5 28 28.5 28 27 C28 25.5 26.8 24.5 24.5 24.5 H19 V29.5 Z" fill="#FFFFFF"/>
+
+  <!-- Letter P -->
+  <path d="M35 44 V20 H45.5 C50.5 20 54 23.5 54 28 C54 32.5 50.5 36 45.5 36 H40 V44 H35 Z M40 31.5 H45 C47.5 31.5 49 30.2 49 28 C49 25.8 47.5 24.5 45 24.5 H40 V31.5 Z" fill="#FFFFFF"/>
+
+  <!-- Pulse Signal Dot -->
+  <circle cx="50" cy="15" r="3.5" fill="#38BDF8"/>
+</svg>

@@ -5,7 +5,15 @@ import { AppLayout } from '../components/layout/AppLayout';
 
 export const metadata: Metadata = {
   title: 'RetailPulse - Inventory & POS Management',
-  description: 'Enterprise retail inventory, audit logging, POS transactions, and reporting.'
+  description: 'Enterprise retail inventory, audit logging, POS transactions, and reporting.',
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml' }
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg'
+  }
 };
 
 export default function RootLayout({
