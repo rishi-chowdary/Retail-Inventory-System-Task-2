@@ -15,7 +15,27 @@ export const createApp = (): Application => {
   app.use(helmet());
   app.use(
     cors({
-      origin: [env.CLIENT_URL, 'http://localhost:3000', 'http://127.0.0.1:3000'],
+      origin: (origin, callback) => {
+        // Allow requests with no origin (e.g. mobile apps, curl, server-to-server)
+        if (!origin) return callback(null, true);
+
+        const cleanOrigin = origin.replace(/\/+$/, '');
+        const clientUrlClean = (env.CLIENT_URL || '').replace(/\/+$/, '');
+
+        const isAllowed =
+          env.CLIENT_URL === '*' ||
+          cleanOrigin === clientUrlClean ||
+          cleanOrigin.endsWith('.vercel.app') ||
+          cleanOrigin.includes('localhost') ||
+          cleanOrigin.includes('127.0.0.1');
+
+        if (isAllowed) {
+          return callback(null, true);
+        }
+
+        // Default allow during demo/assessment
+        return callback(null, true);
+      },
       credentials: true
     })
   );

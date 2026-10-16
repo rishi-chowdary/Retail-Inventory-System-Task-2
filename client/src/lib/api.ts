@@ -1,5 +1,10 @@
-const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+const getBaseUrl = (): string => {
+  const raw = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api';
+  const clean = raw.replace(/\/+$/, '');
+  return clean.endsWith('/api') ? clean : `${clean}/api`;
+};
+
+const API_BASE_URL = getBaseUrl();
 
 export class ApiError extends Error {
   public code: string;
