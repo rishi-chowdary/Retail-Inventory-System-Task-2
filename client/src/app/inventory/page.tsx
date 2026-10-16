@@ -194,6 +194,11 @@ export default function InventoryPage() {
                 {isAdmin && <option value="add">Add Correction (Admin found items)</option>}
                 {isAdmin && <option value="remove">Remove Damage/Expired (Admin)</option>}
               </select>
+              {!isAdmin && (
+                <p className="text-[10px] text-slate-400 mt-1">
+                  Staff role can receive supplier shipments. Manual corrections and damaged stock write-offs require Admin authorization.
+                </p>
+              )}
               {errors.type && (
                 <p className="text-xs text-rose-400 mt-1">{errors.type.message}</p>
               )}

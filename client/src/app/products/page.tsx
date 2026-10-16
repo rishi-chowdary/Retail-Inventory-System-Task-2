@@ -14,7 +14,7 @@ import { Badge } from '../../components/ui/Badge';
 import { Modal } from '../../components/ui/Modal';
 import { Alert, LoadingSpinner, EmptyState } from '../../components/ui/Alert';
 import { Card } from '../../components/ui/Card';
-import { Plus, Search, Edit2, Ban, Filter, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Plus, Search, Edit2, Ban, Filter, ChevronLeft, ChevronRight, Shield } from 'lucide-react';
 import { Product } from '../../types';
 
 const productSchema = z.object({
@@ -161,7 +161,7 @@ export default function ProductsPage() {
           </p>
         </div>
 
-        {isAdmin && (
+        {isAdmin ? (
           <Button
             onClick={() => setIsCreateOpen(true)}
             variant="primary"
@@ -170,6 +170,11 @@ export default function ProductsPage() {
             <Plus size={16} />
             <span>Add New Product</span>
           </Button>
+        ) : (
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700 text-xs text-slate-300">
+            <Shield size={14} className="text-emerald-400" />
+            <span>Staff Mode (Catalog View)</span>
+          </div>
         )}
       </div>
 
@@ -241,7 +246,7 @@ export default function ProductsPage() {
                   <th className="py-3 px-4 font-semibold">SKU</th>
                   <th className="py-3 px-4 font-semibold">Product Name</th>
                   <th className="py-3 px-4 font-semibold">Category</th>
-                  <th className="py-3 px-4 font-semibold text-right">Cost Price</th>
+                  {isAdmin && <th className="py-3 px-4 font-semibold text-right">Cost Price</th>}
                   <th className="py-3 px-4 font-semibold text-right">Selling Price</th>
                   <th className="py-3 px-4 font-semibold text-right">Stock</th>
                   <th className="py-3 px-4 font-semibold text-right">Reorder At</th>
@@ -273,9 +278,11 @@ export default function ProductsPage() {
                         )}
                       </td>
                       <td className="py-3 px-4 text-slate-400">{prod.category}</td>
-                      <td className="py-3 px-4 text-right font-mono text-slate-400">
-                        {formatCurrency(prod.purchasePrice)}
-                      </td>
+                      {isAdmin && (
+                        <td className="py-3 px-4 text-right font-mono text-slate-400">
+                          {formatCurrency(prod.purchasePrice)}
+                        </td>
+                      )}
                       <td className="py-3 px-4 text-right font-mono font-semibold text-slate-200">
                         {formatCurrency(prod.sellingPrice)}
                       </td>
@@ -390,14 +397,14 @@ export default function ProductsPage() {
           />
           <div className="grid grid-cols-2 gap-3">
             <Input
-              label="Purchase Price ($)"
+              label="Purchase Price (₹)"
               type="number"
               step="0.01"
               error={createErrors.purchasePrice?.message}
               {...registerCreate('purchasePrice')}
             />
             <Input
-              label="Selling Price ($)"
+              label="Selling Price (₹)"
               type="number"
               step="0.01"
               error={createErrors.sellingPrice?.message}
@@ -452,14 +459,14 @@ export default function ProductsPage() {
           />
           <div className="grid grid-cols-2 gap-3">
             <Input
-              label="Purchase Price ($)"
+              label="Purchase Price (₹)"
               type="number"
               step="0.01"
               error={editErrors.purchasePrice?.message}
               {...registerEdit('purchasePrice')}
             />
             <Input
-              label="Selling Price ($)"
+              label="Selling Price (₹)"
               type="number"
               step="0.01"
               error={editErrors.sellingPrice?.message}

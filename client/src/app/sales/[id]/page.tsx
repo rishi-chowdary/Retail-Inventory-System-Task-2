@@ -145,6 +145,12 @@ export default function SaleDetailPage() {
             </Button>
           )}
 
+          {!isAdmin && sale.status !== 'Returned' && (
+            <span className="text-[11px] text-slate-500 italic hidden sm:inline">
+              (Returns require Admin approval)
+            </span>
+          )}
+
           <Button variant="primary" size="sm" onClick={handlePrint} className="gap-2">
             <Printer size={14} />
             <span>Print Invoice</span>

@@ -3,6 +3,9 @@ node_modules
 .pnp
 .pnp.js
 
+# Local data
+.data/
+
 # Testing and coverage
 coverage
 
@@ -13,6 +16,7 @@ out/
 # Production build outputs
 dist
 build
+*.tsbuildinfo
 
 # Environment files
 .env

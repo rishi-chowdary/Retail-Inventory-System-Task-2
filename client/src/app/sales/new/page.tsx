@@ -20,7 +20,7 @@ import {
   CheckCircle2,
   Receipt,
   Percent,
-  DollarSign
+  IndianRupee
 } from 'lucide-react';
 import { Product } from '../../../types';
 
@@ -362,8 +362,8 @@ export default function NewSalePage() {
                           : 'border-slate-800 text-slate-400 hover:bg-slate-800'
                       }`}
                     >
-                      <DollarSign size={11} />
-                      <span>Fixed ($)</span>
+                      <IndianRupee size={11} />
+                      <span>Fixed (₹)</span>
                     </button>
                   </div>
 

@@ -9,7 +9,7 @@ import { StatCard } from '../../../components/ui/StatCard';
 import { Button } from '../../../components/ui/Button';
 import { Badge } from '../../../components/ui/Badge';
 import { LoadingSpinner, EmptyState } from '../../../components/ui/Alert';
-import { AlertTriangle, PackageX, DollarSign, ArrowRight, Truck } from 'lucide-react';
+import { AlertTriangle, PackageX, IndianRupee, ArrowRight, Truck } from 'lucide-react';
 import { Product } from '../../../types';
 
 export default function LowStockPage() {
@@ -81,7 +81,7 @@ export default function LowStockPage() {
           title="Est. Replenishment Cost"
           value={formatCurrency(totalSuggestedCost)}
           subtext="Suggested purchase order total"
-          icon={<DollarSign size={20} className="text-emerald-400" />}
+          icon={<IndianRupee size={20} className="text-emerald-400" />}
         />
       </div>
 

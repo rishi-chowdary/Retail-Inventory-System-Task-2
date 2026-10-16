@@ -12,7 +12,7 @@ import {
   BarChart3,
   Download,
   Calendar,
-  DollarSign,
+  IndianRupee,
   TrendingUp,
   Percent,
   Receipt,
@@ -179,7 +179,7 @@ export default function ReportsPage() {
               title="Total Sales Revenue"
               value={formatCurrency(salesReport?.totalSales || 0)}
               subtext="Selected date range"
-              icon={<DollarSign size={20} className="text-emerald-400" />}
+              icon={<IndianRupee size={20} className="text-emerald-400" />}
             />
             <StatCard
               title="Total Completed Orders"
@@ -260,7 +260,7 @@ export default function ReportsPage() {
                   title="Net Revenue"
                   value={formatCurrency(profitReport?.netRevenue || 0)}
                   subtext={`Gross: ${formatCurrency(profitReport?.grossRevenue || 0)}`}
-                  icon={<DollarSign size={20} className="text-indigo-400" />}
+                  icon={<IndianRupee size={20} className="text-indigo-400" />}
                 />
                 <StatCard
                   title="Cost of Goods Sold"

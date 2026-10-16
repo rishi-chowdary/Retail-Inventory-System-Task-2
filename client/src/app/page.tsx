@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import {
-  DollarSign,
+  IndianRupee,
   ShoppingBag,
   AlertTriangle,
   Package,
@@ -137,7 +137,7 @@ export default function DashboardPage() {
           title="Total Sales"
           value={formatCurrency(salesReport?.totalSales || 0)}
           subtext="Net confirmed sales"
-          icon={<DollarSign size={22} />}
+          icon={<IndianRupee size={22} />}
           trend={{ positive: true, text: 'Live POS tracking' }}
         />
         <StatCard
@@ -191,7 +191,7 @@ export default function DashboardPage() {
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="#1E293B" />
                   <XAxis dataKey="date" stroke="#64748B" fontSize={11} tickLine={false} />
-                  <YAxis stroke="#64748B" fontSize={11} tickLine={false} tickFormatter={v => `$${v}`} />
+                  <YAxis stroke="#64748B" fontSize={11} tickLine={false} tickFormatter={v => `₹${v}`} />
                   <Tooltip
                     contentStyle={{
                       backgroundColor: '#0F172A',
@@ -199,6 +199,7 @@ export default function DashboardPage() {
                       borderRadius: '8px',
                       fontSize: '12px'
                     }}
+                    formatter={(value: any) => [formatCurrency(Number(value) || 0), 'Daily Sales']}
                   />
                   <Area
                     type="monotone"
@@ -207,7 +208,7 @@ export default function DashboardPage() {
                     strokeWidth={2}
                     fillOpacity={1}
                     fill="url(#salesGrad)"
-                    name="Daily Sales ($)"
+                    name="Daily Sales (₹)"
                   />
                 </AreaChart>
               </ResponsiveContainer>
