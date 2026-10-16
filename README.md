@@ -132,8 +132,8 @@ npm install
 ```env
 PORT=5000
 NODE_ENV=development
-MONGODB_URI=mongodb://127.0.0.1:27017/retail_inventory?replicaSet=rs0
-JWT_SECRET=super_secret_jwt_key_development_change_in_production
+MONGODB_URI=mongodb+srv://upgrad2803_db_user:FlIpS34UfIh8WuTx@cluster0.mfvioii.mongodb.net/retail_inventory?retryWrites=true&w=majority
+JWT_SECRET=ee4757db034d13d608dcb13f27c7de1a5b4b56f6e6fb4581c5c5ba34fbbfb547
 JWT_EXPIRES_IN=24h
 CLIENT_URL=http://localhost:3000
 ```
