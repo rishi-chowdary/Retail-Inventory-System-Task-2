@@ -5,11 +5,11 @@ A production-quality, full-stack Retail Inventory and Point-of-Sale (POS) Manage
 ---
 
 ## Live Deployments & Documentation
-- **Live Frontend**: `https://retailpulse-client.vercel.app` *(Placeholder - configure via Vercel)*
-- **Live Backend API**: `https://retailpulse-api.railway.app` *(Placeholder - configure via Railway/Render)*
-- **Interactive Swagger/OpenAPI**: `http://localhost:5000/api/docs`
-- **Postman Collection**: [`docs/retail-inventory.postman_collection.json`](file:///home/rishichowdary/.gemini/antigravity-ide/scratch/retail-inventory-system/docs/retail-inventory.postman_collection.json)
-- **Architecture & Interview Explainer**: [`docs/EXPLAINER.md`](file:///home/rishichowdary/.gemini/antigravity-ide/scratch/retail-inventory-system/docs/EXPLAINER.md)
+- **Live Frontend (Vercel)**: [https://retail-inventory-system-task-2.vercel.app/](https://retail-inventory-system-task-2.vercel.app/)
+- **Live Backend API (Render)**: [https://retailpulse-api-cpjo.onrender.com](https://retailpulse-api-cpjo.onrender.com)
+- **Interactive Swagger/OpenAPI**: [https://retailpulse-api-cpjo.onrender.com/api/docs/](https://retailpulse-api-cpjo.onrender.com/api/docs/)
+- **Postman Collection**: [`docs/retail-inventory.postman_collection.json`](docs/retail-inventory.postman_collection.json)
+- **Architecture & Interview Explainer**: [`docs/EXPLAINER.md`](docs/EXPLAINER.md)
 
 ---
 
@@ -203,16 +203,16 @@ npm test
 3. Build command: `npm run build`.
 4. Start command: `node dist/server.js`.
 5. Set environment variables:
-   - `PORT=5000`
+   - `PORT=10000`
    - `NODE_ENV=production`
    - `MONGODB_URI=<Your MongoDB Atlas Connection String with Replica Set>`
    - `JWT_SECRET=<Strong Random Production Secret>`
-   - `CLIENT_URL=https://<your-client-domain>.vercel.app`
+   - `CLIENT_URL=https://retail-inventory-system-task-2.vercel.app`
 
 ### Frontend Deployment (Vercel)
 1. Import repository on Vercel.
 2. Set Root Directory to `client`.
 3. Framework Preset: Next.js.
 4. Set environment variable:
-   - `NEXT_PUBLIC_API_URL=https://<your-backend-domain>.railway.app/api`
+   - `NEXT_PUBLIC_API_URL=https://retailpulse-api-cpjo.onrender.com/api`
 5. Deploy.
